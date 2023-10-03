@@ -1,5 +1,5 @@
  function removePontuacao(campo) {
-    return ;
+    return campo.value.replace(/\.|-/g, "");
 }
 
 
