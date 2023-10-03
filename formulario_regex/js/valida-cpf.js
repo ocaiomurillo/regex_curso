@@ -32,7 +32,7 @@ function calculaDigitoVerificador(cpf, multiplicadorInicial) {
 export default function ehUmCPF(campo) {
     const cpfSemPontuacao = removePontuacao(campo);
     
-    if (todosDigitosIguais(cpfSemPontuacao) || calculaDigitoVerificador(cpfSemPontuacao, 10) || calculaDigitoVerificador(cpfSemPontuacao, 11)) { 
+    if (todosDigitosIguais(cpfSemPontuacao) || calculaDigitoVerificador(cpfSemPontuacao, 10) || calculaDigitoVerificador(cpfSemPontuacao, 11) ||  cpfSemPontuacao.match(/[A-Za-zÀ-ÿ]+/)) { //inserir caracteres especiais como desafio
         console.log("Dígitos iguais:",todosDigitosIguais(cpfSemPontuacao));
         console.log("CPF sem pontuação:", cpfSemPontuacao);
         campo.setCustomValidity('Esse CPF não é válido');
